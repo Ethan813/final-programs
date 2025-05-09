@@ -1,0 +1,27 @@
+program: Create Student Database Table
+steps:
+  - step: Start program
+  - step: Connect to SQLite database 'students.db'
+  - step: Create a cursor from the connection
+  - step: Drop table 'Entries' if it exists
+  - step: Create table 'Entries' with columns:
+      - ID: INTEGER PRIMARY KEY NOT NULL
+      - NAME: TEXT
+      - GRADE: TEXT
+      - GRADE_PERCENTAGE: FLOAT
+      - CLASS: TEXT
+      - MAJOR: TEXT
+      - CITY: TEXT
+  - step: Define list 'data' with student records:
+      - [1, 'Abraham Anderson', 'B', 87.52, 'COS2005', 'Business', 'St. Paul']
+      - [2, 'Sabria Fafach', 'A', 92.37, 'COS2005', 'Art', 'Maple Grove']
+      - [3, 'Ainsley Bellamy', 'C', 78.94, 'COS2005', 'Culinary', 'Blaine']
+      - [4, 'Violet Haveman', 'A', 98.12, 'COS2005', 'Medical', 'Minneapolis']
+      - [5, 'Ben Krehbiel', 'C', 70.94, 'COS2005', 'Finance', 'Coon Rapids']
+      - [6, 'Lucia Floan', 'B', 81.85, 'COS2005', 'Economics', 'Champlin']
+  - step: Insert data into 'Entries' using executemany
+  - step: Commit the transaction
+  - step: Close the database connection
+  - step: End program
+
+# Caleb Saari 5/8/25 Final Project Pseudocode
